@@ -15,9 +15,13 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.urls import path, include
+from django.contrib import admin
 # from curso_django.core import urls
+
+admin.autodiscover()
 
 urlpatterns = [
     path('', include('curso_django.core.urls')),
+    path('admin/', include(admin.site.urls)),
     # path('contato/', include('curso_django.core.urls')),
 ]
