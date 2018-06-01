@@ -1,6 +1,6 @@
-from django.urls import path, include
+from django.urls import path
 from curso_django.courses import views
 
 urlpatterns = [
-    path('', include('views.index'), name='index'),
+    path('', views.index, name='index'),
 ]

@@ -16,12 +16,19 @@ Including another URLconf
 
 from django.urls import path, include
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 # from curso_django.core import urls
 
 admin.autodiscover()
 
+# app_name = 'curso_django'
+
 urlpatterns = [
     path('', include('curso_django.core.urls')),
-    path('cursos/', include('curso_django.courses.urls', namespace='courses')),
+    path('cursos/', include('curso_django.courses.urls')),
     path('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

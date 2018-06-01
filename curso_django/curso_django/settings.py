@@ -123,3 +123,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'curso_django', 'media')
+
+MEDIA_URL = '/media/'
