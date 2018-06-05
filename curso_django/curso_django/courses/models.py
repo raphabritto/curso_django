@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class CourseManager(models.Manager):
 
@@ -33,6 +34,11 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+
+    @models.permalink
+    def get_absolute_url(self):
+        # from django.urls import reverse
+        return reverse('courses:details', (), {'slug': self.slug})
 
     class Meta:
         verbose_name = 'Curso'
