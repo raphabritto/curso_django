@@ -18,14 +18,13 @@ from django.urls import path, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-# from curso_django.core import urls
 
 admin.autodiscover()
 
 # app_name = 'curso_django'
 
 urlpatterns = [
-    path('', include('curso_django.core.urls')),
+    path('', include('curso_django.core.urls'), name='core'),
     path('cursos/', include('curso_django.courses.urls')),
     path('admin/', admin.site.urls),
 ]
